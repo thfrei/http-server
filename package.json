@@ -15,6 +15,7 @@
   "scripts": {
     "start": "node ./bin/http-server",
     "master": "node ./lib/master",
+    "slave": "node ./lib/slave",
     "pretest": "common bin/http-server lib/ test",
     "test": "vows --spec --isolate"
   },
