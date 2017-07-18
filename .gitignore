@@ -1,2 +1,6 @@
 node_modules/*
 npm-debug.log
+.idea
+.vscode
+test/slave
+yarn-error.log
