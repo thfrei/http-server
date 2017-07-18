@@ -2,7 +2,7 @@
   "name": "http-folder-sync",
   "version": "0.1.0",
   "description": "A simple zero-configuration command-line file sharing utility",
-  "main": "./lib/http-server",
+  "main": "./lib/master",
   "repository": {
     "type": "git",
     "url": "git://github.com/thfrei/http-folder-sync.git"
@@ -39,6 +39,7 @@
     "opener": "~1.4.0",
     "optimist": "0.6.x",
     "portfinder": "^1.0.13",
+    "request": "^2.81.0",
     "serve-index": "^1.9.0",
     "slash": "^1.0.0",
     "socket.io": "^2.0.3",
@@ -47,7 +48,6 @@
   },
   "devDependencies": {
     "common-style": "^3.0.0",
-    "request": "^2.81.0",
     "vows": "0.7.x"
   },
   "bugs": {
@@ -56,7 +56,9 @@
   "license": "MIT",
   "preferGlobal": "true",
   "bin": {
-    "http-folder-sync": "./bin/http-folder-server",
-    "hfs": "./bin/http-server"
+    "http-folder-sync-master": "./bin/http-folder-sync-master",
+    "hfsm": "./bin/http-folder-sync-master",
+    "http-folder-sync-slave": "./bin/http-folder-sync-slave",
+    "hfss": "./bin/http-folder-sync-slave"
   }
 }

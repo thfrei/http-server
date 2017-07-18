@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+'use strict';
+
+
+var program = require('commander');
+program
+  .version('0.1.0')
+  .option('-h, --host [host]', 'Host url')
+  .option('-d, --dir [dir]', 'slave directory')
+  .parse(process.argv);
+
+console.log('slave', __dirname, process.env);

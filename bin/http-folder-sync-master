@@ -31,3 +31,5 @@ var port = argv.p || parseInt(process.env.PORT, 10),
   proxy = argv.P || argv.proxy,
   utc = argv.U || argv.utc,
   logger;
+
+console.log('root', argv._[0]);
