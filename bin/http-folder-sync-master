@@ -2,34 +2,17 @@
 
 'use strict';
 
-var colors   = require('colors/safe'),
-  os         = require('os'),
-  httpServer = require('../lib/http-server'),
-  portfinder = require('portfinder'),
-  opener     = require('opener'),
-  argv       = require('optimist')
-    .boolean('cors')
-    .argv;
+const startServer = require('./../lib/master.js').startServer;
+const package = require('./../package.json');
 
+var program = require('commander');
+program
+  .version(package.version)
+  .option('-p, --port [port]', 'Host url')
+  .option('-d, --dir [dir]', 'master directory')
+  .parse(process.argv);
 
-var ifaces = os.networkInterfaces();
-
-if (argv.h || argv.help) {
-  console.log([
-    'usage: http-folder-sync [path]',
-    '',
-    'options:',
-    '  -p --port    Port to use [8080]',
-    '  -h --help    Print this list and exit.'
-  ].join('\n'));
-  process.exit();
-}
-
-var port = argv.p || parseInt(process.env.PORT, 10),
-  host = argv.a || '0.0.0.0',
-  ssl = !!argv.S || !!argv.ssl,
-  proxy = argv.P || argv.proxy,
-  utc = argv.U || argv.utc,
-  logger;
-
-console.log('root', argv._[0]);
+startServer({
+  port: program.port,
+  directory: program.dir
+});
