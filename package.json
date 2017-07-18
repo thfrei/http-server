@@ -13,7 +13,7 @@
     "file-sharing"
   ],
   "scripts": {
-    "start": "node ./bin/http-server",
+    "start": "node ./bin/http-folder-sync",
     "master": "node ./lib/master",
     "slave": "node ./lib/slave",
     "pretest": "common bin/http-server lib/ test",
@@ -26,6 +26,7 @@
   "contributors": [],
   "dependencies": {
     "colors": "1.0.3",
+    "commander": "^2.11.0",
     "corser": "~2.0.0",
     "download-file": "^0.1.5",
     "ecstatic": "^2.0.0",
@@ -55,7 +56,7 @@
   "license": "MIT",
   "preferGlobal": "true",
   "bin": {
-    "http-folder-sync": "./bin/http-server",
+    "http-folder-sync": "./bin/http-folder-server",
     "hfs": "./bin/http-server"
   }
 }
