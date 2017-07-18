@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-'use strict';
-
 const startServer = require('./../lib/master.js').startServer;
 const package = require('./../package.json');
 
